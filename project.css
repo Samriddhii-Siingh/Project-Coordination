@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Audiowide", sans-serif;
+  background-color: #393E46;
+  text-align: center;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
+}
+.container .content {
+  background-color: #393E46;
+  display: flex;
+  height:100%;
+  width: 100%;
+}
+
+.sidebar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  height: 100%;
+}
+.sidebar .logo .icon {
+  font-size: 3em;
+  color: #fafbfb;
+  top: 16px;
+  left: 12px;
+  position: absolute;
+  z-index: 100;
+}
+.sidebar nav {
+  position: relative;
+}
+.sidebar nav .menu-options {
+  color: #bbc3c9;
+  font-size: 1.5em;
+  list-style: none;
+}
+.sidebar nav .menu-options li a{
+  border-radius: 5px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 10px;
+  color: #bbc3c9;
+  display: block;
+}
+.sidebar nav .menu-options li.selected, .sidebar nav .menu-options li a:hover {
+  background: #00ADB5;
+  color: #393E46;
+  display: block;
+  padding: 15px;
+  margin: 10px;
+  font-size: 40px;
+}
+
+.sidebar nav .menu-options li:hover {
+  cursor: pointer;
+}
+.sidebar nav .menu-options .icon {
+  font-size: 38px;
+}
+
+.sidebar nav .menu-options p {
+  padding: 5px;
+  font-size: 25px;
+  margin: 2px;
+  background-color: #00ADB5;
+  color: #393E46;
+  border-radius: 10px;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  background-color:white;
+  border-top-right-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+.main-content .app {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.main-content .app .app-content {
+  margin: 10px;
+  background-color: white;
+  border-radius: 5px;
+  height: 716px;
+}
+.main-content .app .app-content header {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.main-content .app .app-content header .searchbox {
+  display: flex;
+  padding: 10px;
+  background: #eeeff1;
+  border-radius: 5px;
+  width: 500px;
+}
+.main-content .app .app-content header .searchbox .icon {
+  color: #9199a5;
+  margin: 0 5px;
+}
+.main-content .app .app-content header .searchbox input.search-text {
+  border: none;
+  background: inherit;
+  font-size: 0.75em;
+  font-weight: 600;
+  outline: none;
+}
+
+.main-content .app .app-content .info {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  width: 8%;
+  float: right;
+  justify-content: end;
+  color: #393E46;
+}
+
+.main-content .app .app-content .info .contact .user p { 
+  font-size: 18px;
+  margin: 10px 0;
+  padding: 5px 0;
+  color: #393E46;
+}
+
+.projects {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+  height: 630px;
+  overflow-y: scroll;
+}
+.projects .project-item {
+  padding: 16px;
+  margin: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 1px rgba(181, 181, 181, 0.38);
+  width: 285px;
+  height: 300px
+}
+
+.projects .project-item .title-row {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+.projects .project-item .title-row h3 {
+  font-weight: bold;
+}
+.projects .project-item .title-row .links .icon {
+  margin-right: 1px;
+}
+.projects .project-item .title-row .links a {
+  color: #88909c;
+  text-decoration: none;
+}
+.projects .project-item .desc-row {
+  color: #88909c;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  padding-top: 5px;
+}

@@ -1,0 +1,202 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Mar 30, 2023 at 07:11 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Database: `projectify`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `assigned`
+--
+
+CREATE TABLE `assigned` (
+  `student_id` int(11) NOT NULL,
+  `teacher_id` int(11) NOT NULL,
+  `project_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `assigned`
+--
+
+INSERT INTO `assigned` (`student_id`, `teacher_id`, `project_id`) VALUES
+(0, 10900219, 1001),
+(209302197, 109002197, 2001);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `form_data`
+--
+
+CREATE TABLE `form_data` (
+  `num` int(50) NOT NULL,
+  `language` varchar(255) NOT NULL,
+  `mentor` varchar(255) NOT NULL,
+  `project` varchar(255) NOT NULL,
+  `student_id` int(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `form_data`
+--
+
+INSERT INTO `form_data` (`num`, `language`, `mentor`, `project`, `student_id`) VALUES
+(1, 'Python', '100923459', '3001', 209302338),
+(7, 'Python', '100923459', '4001', 209302338),
+(8, 'Java', '10920012', '2001', 209302338);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `project`
+--
+
+CREATE TABLE `project` (
+  `project_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `domain` varchar(20) NOT NULL,
+  `language` varchar(20) NOT NULL,
+  `description` varchar(200) NOT NULL,
+  `duration` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `project`
+--
+
+INSERT INTO `project` (`project_id`, `name`, `domain`, `language`, `description`, `duration`) VALUES
+(1001, 'Website Scraper', 'Cyber Security', 'Java', 'A Web Scraper is a program that quite accurately scrapes or gathers data from websites. Let’s take an imaginary example, where we might build a web scraper that would go to Twitter.', '4 days'),
+(1002, 'Log Analyzer', 'Cyber Security', 'Python', 'It is the process by which computer-generated log messages are filtered, also known as log events, audit trail records, or simply logs. Log analyzer provides a valuable system of measurement that pain', '1 week'),
+(2001, 'Resume Builder', 'Web Development', 'Html, css, js, php', 'This website when implemented will help most aspiring individuals to make an attractive and ever-wanting resume within minutes. Its feature includes personal details, educational background.', '3 Week'),
+(2002, 'Trading App', 'Web Development', 'Html, css, js, php', 'This app features available market data, trading alerts, and many more. Using React Native to implement this would be the best choice.', '1 Week'),
+(3001, 'Rural Banking', 'Cloud Computing', 'Python', 'This project supports the service of rural banking for smaller rural communities constantly looking for robust and strengthened deposit mobilization mechanisms.', '4 Weeks'),
+(4001, 'HealthCare App', 'Data Mining', 'Java', ' The e-Healthcare management system is a web-based project that seeks to provide effective management of employee data and medical data of patients in hospitals and clinics.', '6 Weeks'),
+(5001, 'Text Mining', 'Machine Learning', 'C++', 'From emails to social media posts, 80% of extant text data is unstructured. Text mining is a way to extract valuable insights from this type of raw data.', '2 Weeks'),
+(6001, 'Uhive', 'Blockchain', 'C++', 'Uhive is Blockchain project that aims to take social networking to another level. On this platform, you can connect with family and friends and also explore your interests just like any other platform', '6 Weeks');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `student_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `domain` varchar(20) NOT NULL,
+  `language` varchar(20) NOT NULL,
+  `p_id` int(11) NOT NULL,
+  `status` varchar(10) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `name`, `password`, `domain`, `language`, `p_id`, `status`, `gender`, `email`) VALUES
+(29834095, 'Ojasvi Khare', 'ojasvi123', '', '', 0, '', 'M', 'ojasvi200@gmail.com'),
+(190356287, 'Abhay Tiwari', 'abhay101*', '', '', 0, '', 'M', 'abhay101@gmail.com'),
+(209301278, 'Samriddhi', 'samriddhi101*', '', '', 0, '', 'F', 'ss901739@gmail.com'),
+(209302338, 'Bhamini', 'darkage20', '', '', 0, '', 'F', 'bhamini2001@gmail.com'),
+(239103832, 'Edmund ', 'eddie', '', '', 0, '', 'M', 'ed2019@hotmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `teacher_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `domain` varchar(20) NOT NULL,
+  `language` varchar(20) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `email` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `teacher`
+--
+
+INSERT INTO `teacher` (`teacher_id`, `name`, `password`, `domain`, `language`, `gender`, `email`) VALUES
+(10900219, 'aman singh', 'aman101', 'Cyber Security', 'Java', 'M', 'aman201@gmail.com'),
+(10920012, 'ajay raj', 'rajajay200', 'Data Mining', 'Java', 'M', 'ajay333@gmail.com'),
+(100923459, 'Amit Singh', 'amit88@', 'Web Development', 'Html, css, js, php', 'M', 'amit1990@outlook.com'),
+(109002197, 'Kavita Verma', 'Kverma20', 'Cloud Computing', 'Python', 'F', 'kverma1993@gmail.com'),
+(109340382, 'Deveesh Chaudhary', 'deveesh101', 'Cyber Security', 'Java', 'M', 'dev.chaudhary01@hotmail.com'),
+(109346297, 'Anju Yadav', 'yadavanju', 'Data Mining', 'Java', 'F', 'anju.yadav1975@gmail.com');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `form_data`
+--
+ALTER TABLE `form_data`
+  ADD PRIMARY KEY (`num`);
+
+--
+-- Indexes for table `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`project_id`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`student_id`);
+
+--
+-- Indexes for table `teacher`
+--
+ALTER TABLE `teacher`
+  ADD PRIMARY KEY (`teacher_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `form_data`
+--
+ALTER TABLE `form_data`
+  MODIFY `num` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `project`
+--
+ALTER TABLE `project`
+  MODIFY `project_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6002;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=239103833;
+
+--
+-- AUTO_INCREMENT for table `teacher`
+--
+ALTER TABLE `teacher`
+  MODIFY `teacher_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109346298;
+COMMIT;
